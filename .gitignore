@@ -1,0 +1,10 @@
+work/
+output/
+__pycache__/
+*.pyc
+.env
+*.egg-info/
+dist/
+.venv/
+.claude/
+guidelines/*/source.pdf

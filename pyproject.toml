@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "clinical-guideline-extractor"
+version = "0.3.0"
+description = "Extract clinical guidelines from PDF to structured markdown for RAG"
+requires-python = ">=3.11"
+dependencies = [
+    # PDF processing
+    "pdfplumber>=0.11",
+    "pdf2image>=1.17",
+    "pypdf>=4.0",
+    # Document structure
+    "docling>=2.5",
+    # LLM APIs
+    "anthropic>=0.40",
+    "google-genai>=1.0",
+    # NLP validation
+    "spacy>=3.7",
+    # Utilities
+    "python-dotenv>=1.0",
+    "rich>=13.0",
+    "Pillow>=10.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+]
+
+[project.scripts]
+extract-guideline = "src.main:main"
